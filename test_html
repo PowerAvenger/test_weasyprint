@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <style>
+    @page { size: A4; margin: 20mm; }
+    body { font-family: Helvetica, Arial, sans-serif; font-size: 12pt; color: #1e293b; }
+    h1 { color: #1a56db; border-bottom: 3px solid #1a56db; padding-bottom: 8px; }
+    .kpi { display: flex; gap: 16px; margin: 20px 0; }
+    .card { flex: 1; background: #f0f6ff; border: 1px solid #bfdbfe;
+            border-radius: 8px; padding: 12px; text-align: center; }
+    .card .valor { font-size: 18pt; font-weight: bold; color: #1a56db; }
+  </style>
+</head>
+<body>
+  <h1>Test WeasyPrint — TOTALPOWER</h1>
+  <p>Generado correctamente en Streamlit Community Cloud.</p>
+  <div class="kpi">
+    <div class="card"><div class="valor">18.450 €</div><div>Coste contratado</div></div>
+    <div class="card"><div class="valor">14.920 €</div><div>Coste óptimo</div></div>
+    <div class="card" style="background:#f0fdf4;border-color:#86efac;">
+      <div class="valor" style="color:#15803d;">3.530 €</div><div>Ahorro</div>
+    </div>
+  </div>
+</body>
+</html>
