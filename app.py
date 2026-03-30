@@ -7,7 +7,7 @@ st.write("Pulsa el botón para generar un PDF de prueba.")
 if st.button("Generar PDF"):
     with st.spinner("Generando PDF..."):
         try:
-            with open("test.html", "r", encoding="utf-8") as f:
+            with open("test_html", "r", encoding="utf-8") as f:
                 html_string = f.read()
             pdf_bytes = HTML(string=html_string).write_pdf()
             st.success("PDF generado correctamente.")
