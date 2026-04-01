@@ -1,21 +1,16 @@
 import streamlit as st
-from weasyprint import HTML
+import plotly.express as px
+import pandas as pd
 
-st.title("Test WeasyPrint")
-st.write("Pulsa el botón para generar un PDF de prueba.")
+st.title("Test Kaleido + WeasyPrint")
 
-if st.button("Generar PDF"):
-    with st.spinner("Generando PDF..."):
+if st.button("Generar PNG de prueba"):
+    with st.spinner("Generando..."):
         try:
-            with open("test_html", "r", encoding="utf-8") as f:
-                html_string = f.read()
-            pdf_bytes = HTML(string=html_string).write_pdf()
-            st.success("PDF generado correctamente.")
-            st.download_button(
-                label="Descargar PDF",
-                data=pdf_bytes,
-                file_name="test_weasyprint.pdf",
-                mime="application/pdf"
-            )
+            df = pd.DataFrame({"mes": ["ene","feb","mar"], "valor": [100, 200, 150]})
+            fig = px.bar(df, x="mes", y="valor", title="Test")
+            png_bytes = fig.to_image(format="png", width=700, height=400)
+            st.success("PNG generado correctamente")
+            st.image(png_bytes)
         except Exception as e:
             st.error(f"Error: {e}")
